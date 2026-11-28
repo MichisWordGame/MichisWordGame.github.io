@@ -1,0 +1,15 @@
+{
+  "_comment": "TURN relay for Michi's Word Game (Metered app mischiswordgame, free plan). Public on purpose: a static, revocable relay credential. Rotate it in the Metered dashboard if abused.",
+  "iceServers": [
+    {
+      "urls": [
+        "turn:standard.relay.metered.ca:80",
+        "turn:standard.relay.metered.ca:80?transport=tcp",
+        "turn:standard.relay.metered.ca:443",
+        "turns:standard.relay.metered.ca:443?transport=tcp"
+      ],
+      "username": "28a46f2e181d8014dbd6aeed",
+      "credential": "tNZ1S+03gR2KdfxL"
+    }
+  ]
+}

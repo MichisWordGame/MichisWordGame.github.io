@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Michi's Word Game: find words in a shared letter grid with friends. Host on one phone, everyone plays on their own.">
+
+  <!--
+    Uncomment the tag below to lay the app out underneath the parts of the
+    screen that the device obstructs, such as a display cutout, the rounded
+    corners of the screen, or a home indicator.
+
+    Without it, the browser keeps the app clear of them, and `SafeArea` and
+    `MediaQuery.paddingOf` report no padding. With it, the app covers the whole
+    screen, and it is up to the app to keep its own content out of the way,
+    which is what `SafeArea` is for.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#5BC8F5">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Michi's Word Game">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Michi's Word Game</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: linear-gradient(#5BC8F5, #6A7BFF 55%, #7B61FF); overscroll-behavior: none; }
+    /* During a round (set by lib/platform/round_guard_web.dart): no browser
+       panning, pull-to-refresh, overscroll navigation, text selection or
+       long-press callouts while dragging across letters. */
+    html.mwg-in-round, html.mwg-in-round body, html.mwg-in-round flutter-view {
+      touch-action: none; overscroll-behavior: none;
+      -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+    }
+    #mwg-loading { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; font: 700 22px system-ui, sans-serif; color: #fff; gap: 18px; }
+    #mwg-loading img { width: 150px; height: 150px; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 6px 18px rgba(0,0,0,.25); animation: mwg-bob 1.4s ease-in-out infinite alternate; }
+    @keyframes mwg-bob { to { transform: translateY(-10px) rotate(3deg); } }
+  </style>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div id="mwg-loading"><img src="assets/assets/mascot_face.png" alt=""><div>Loading Michi's Word Game…</div></div>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script>
+    // Remove the loading screen once Flutter draws its first frame.
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('mwg-loading');
+      if (el) el.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

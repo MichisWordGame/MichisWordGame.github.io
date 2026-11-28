@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.michiswordgame.michis_word_game",
+      "sha256_cert_fingerprints": [
+        "2A:C6:CC:DA:E9:13:C3:57:72:DD:9B:F4:5D:18:A1:58:6E:A0:40:88:E5:9B:E2:66:DE:58:5C:49:08:DA:F1:49"
+      ]
+    }
+  }
+]

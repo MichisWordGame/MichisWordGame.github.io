@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["APPLE_TEAM_ID.io.github.michiswordgame.michisWordGame"],
+        "appID": "APPLE_TEAM_ID.io.github.michiswordgame.michisWordGame",
+        "components": [
+          { "/": "/join*", "comment": "Room invites" },
+          { "/": "/challenge*", "comment": "Challenge links" }
+        ],
+        "paths": ["/join*", "/challenge*"]
+      }
+    ]
+  }
+}
